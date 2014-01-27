@@ -1,4 +1,29 @@
 class ProjectController < ApplicationController
-def home
-end
+  def my_logger
+      @@my_logger ||= Logger.new("/tmp/my.log")
+  end
+  def new
+  end
+
+  def create
+    @project = Project.new(project_params)
+    @project.student_id = current_user.id
+    if @project.save
+      redirect_to project_url(@project)
+    else
+      flash[:error] = @project.errors.full_messages
+      render 'new'
+    end
+  end
+
+  def show
+    @project = Project.find(params[:id])
+  end
+
+  private
+    def project_params
+      params.require(:project).permit(:title,
+                                      :summary,
+                                      :description)
+    end
 end
