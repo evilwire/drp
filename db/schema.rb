@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140125220840) do
+ActiveRecord::Schema.define(version: 20140130022712) do
 
   create_table "email_addresses", force: true do |t|
     t.string   "address"
@@ -60,6 +60,18 @@ ActiveRecord::Schema.define(version: 20140125220840) do
     t.text     "summary"
     t.text     "description"
     t.integer  "project_state_id"
+    t.string   "email"
+    t.string   "major"
+    t.string   "year"
+    t.text     "past_courses"
+    t.text     "current_courses"
+    t.text     "interests"
+    t.text     "why"
+    t.text     "favorite"
+    t.string   "recommender"
+    t.string   "alternate"
+    t.string   "how"
+    t.text     "questions"
   end
 
   create_table "references", force: true do |t|

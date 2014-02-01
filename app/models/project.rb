@@ -3,14 +3,18 @@
 # mentee are working on.
 #
 class Project < ActiveRecord::Base
-   has_one :student, :class_name => 'Users'
-   has_one :mentor, :class_name => 'Users'
-   has_one :project_state
+   belongs_to :student, :class_name => 'Users'
+   belongs_to :mentor, :class_name => 'Users'
+   belongs_to :project_state
 
-   validates :project_state, :presence => true
-   validates :student, :presence => true
-   validates :mentor, :presence => true
-   validates :title, :presence => true
-   
-   attr_accessor :title, :summary, :description
+   validates :email, :presence => true
+   validates :major, :presence => true
+   validates :past_courses, :presence => true
+   validates :current_courses, :presence => true
+   validates :interests, :presence => true
+   validates :why, :presence => true
+   validates :favorite, :presence => true
+   validates :recommender, :presence => true
+   validates :alternate, :presence => true
+   validates :how, :presence => true
 end

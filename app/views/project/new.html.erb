@@ -1,0 +1,92 @@
+<% provide(:title, 'Apply for DRP') %>
+<%=render '/layouts/logo'%>
+
+<section>
+    <div class="section-wrapper">
+
+        <%= form_for :project, url: {action: "create"}  do |f| %>
+            <div class="form-element">
+                <%= f.label :email %>
+                <%= f.text_field :email %>
+            </div>
+            <div class="form-element">
+                <%= f.label :major %>
+                <%= f.text_field :major %>
+            </div>
+            <div class="form-element">
+                <%= f.label :year %>
+                <%= select("year", "year", [[1,1],[2,2],[3,3],[4,4],[5,5]], { :include_blank => true }) %>
+            </div>
+            <div class="form-element">
+                <%= f.label :past_courses, "List the courses taken" %>
+                <%= f.text_area :past_courses %>
+            </div>
+            <div class="form-element">
+                <%= f.label :current_courses, "List the courses you will take during the DRP" %>
+                <%= f.text_area :current_courses %>
+            </div>
+            <div class="form-element">
+                <%= f.label :interests, "Briefly describe your mathematical interests" %>
+                <%= f.text_area :interests %>
+            </div>
+            <div class="form-element">
+                <%= f.label :why, "Briefly describe why you would like to participate in the program" %>
+                <%= f.text_area :why %>
+            </div>
+            <div class="form-element">
+                <%= f.label :favorite, "What is your favorite math-anything?" %>
+                <%= f.text_area :favorite %>
+            </div>
+            <div class="form-element">
+                <%= f.label :recommender %>
+                <%= f.text_field :recommender %>
+            </div>
+            <div class="form-element">
+                <%= f.label :alternate, "Who else in the department of mathematics knows you well?" %>
+                <%= f.text_field :alternate %>
+            </div>
+            <div class="form-element">
+                <%= f.label :how, "How did you hear about the program?" %>
+                <%= f.text_area :how %>
+            </div>
+            <div class="form-element">
+                <%= f.label :questions, "Any other questions or comments?" %>
+                <%= f.text_area :questions %>
+            </div>
+            <div class="form-element">
+                <%= f.submit "submit" %>
+            </div>
+        <% end %>
+    </div>
+
+</section>
+
+<nav>
+  <div class='nav-container'>
+        <div class='nav-item'>
+            <%=link_to "#" do%>
+                <div class="past button"></div>
+                <span class="past label">past projects</span>
+            <%end%>
+        </div>
+        <div class='nav-item'>
+            <%=link_to "#" do%>
+                <div class="mentor button"></div>
+                <span class="mentor label">mentors</span>
+            <%end%>
+        </div>
+        <div class='nav-item'>
+            <%=link_to "#" do%>
+                <div class="participants button"></div>
+                <span class="participants label">participants</span>
+            <%end%>
+        </div>
+        <div class='nav-item'>
+            <%=link_to "#" do%>
+                <div class="info button"></div>
+                <span class="info label">information</span>
+            <%end%>
+        </div>
+  </div>
+</nav>
+
