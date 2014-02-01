@@ -25,6 +25,7 @@ Drp::Application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
   resources :project
+  resources :student_application
 
   match '/signin',  to: 'sessions#new',         via: 'get'
 
