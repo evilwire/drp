@@ -4,43 +4,16 @@
 <section>
     <div class="section-wrapper">
         <div>
-            student: <%= @project.student.first_name %><%= @project.student.last_name %>
+            title: <%= @project[:title] %>
         </div>
         <div>
-            email: <%= @project.email %>
+            summary: <%= @project.summary %>
         </div>
         <div>
-            major: <%= @project.major %>
+            description: <%= @project.description %>
         </div>
         <div>
-            year: <%= @project.year %>
-        </div>
-        <div>
-            Past courses: <%= @project.past_courses %>
-        </div>
-        <div>
-            current courses: <%= @project.current_courses %>
-        </div>
-        <div>
-            interests: <%= @project.interests %>
-        </div>
-        <div>
-            why: <%= @project.why %>
-        </div>
-        <div>
-            favorite: <%= @project.favorite %>
-        </div>
-        <div>
-            recommender: <%= @project.recommender %>
-        </div>
-        <div>
-            other math dept: <%= @project.alternate %>
-        </div>
-        <div>
-            how you found us: <%= @project.how %>
-        </div>
-        <div>
-            questions: <%= @project.questions %>
+            student: <%= @project.student.first_name %>
         </div>
     </div>
 

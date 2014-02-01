@@ -6,52 +6,16 @@
 
         <%= form_for :project, url: {action: "create"}  do |f| %>
             <div class="form-element">
-                <%= f.label :email %>
-                <%= f.text_field :email %>
+                <%= f.label :title %>
+                <%= f.text_field :title %>
             </div>
             <div class="form-element">
-                <%= f.label :major %>
-                <%= f.text_field :major %>
+                <%= f.label :summary %>
+                <%= f.text_area :summary %>
             </div>
             <div class="form-element">
-                <%= f.label :year %>
-                <%= select("year", "year", [[1,1],[2,2],[3,3],[4,4],[5,5]], { :include_blank => true }) %>
-            </div>
-            <div class="form-element">
-                <%= f.label :past_courses, "List the courses taken" %>
-                <%= f.text_area :past_courses %>
-            </div>
-            <div class="form-element">
-                <%= f.label :current_courses, "List the courses you will take during the DRP" %>
-                <%= f.text_area :current_courses %>
-            </div>
-            <div class="form-element">
-                <%= f.label :interests, "Briefly describe your mathematical interests" %>
-                <%= f.text_area :interests %>
-            </div>
-            <div class="form-element">
-                <%= f.label :why, "Briefly describe why you would like to participate in the program" %>
-                <%= f.text_area :why %>
-            </div>
-            <div class="form-element">
-                <%= f.label :favorite, "What is your favorite math-anything?" %>
-                <%= f.text_area :favorite %>
-            </div>
-            <div class="form-element">
-                <%= f.label :recommender %>
-                <%= f.text_field :recommender %>
-            </div>
-            <div class="form-element">
-                <%= f.label :alternate, "Who else in the department of mathematics knows you well?" %>
-                <%= f.text_field :alternate %>
-            </div>
-            <div class="form-element">
-                <%= f.label :how, "How did you hear about the program?" %>
-                <%= f.text_area :how %>
-            </div>
-            <div class="form-element">
-                <%= f.label :questions, "Any other questions or comments?" %>
-                <%= f.text_area :questions %>
+                <%= f.label :description %>
+                <%= f.text_area :description %>
             </div>
             <div class="form-element">
                 <%= f.submit "submit" %>

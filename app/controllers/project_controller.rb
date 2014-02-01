@@ -2,7 +2,6 @@ class ProjectController < ApplicationController
   def my_logger
       @@my_logger ||= Logger.new("/tmp/my.log")
   end
-
   def new
   end
 
@@ -21,22 +20,10 @@ class ProjectController < ApplicationController
     @project = Project.find(params[:id])
   end
 
-  def list
-
-  end
-
   private
     def project_params
-      params.require(:project).permit(:email,
-                                      :major,
-                                      :past_courses,
-                                      :current_courses,
-                                      :interests,
-                                      :why,
-                                      :favorite,
-                                      :recommender,
-                                      :alternate,
-                                      :how,
-                                      :questions)
+      params.require(:project).permit(:title,
+                                      :summary,
+                                      :description)
     end
 end
