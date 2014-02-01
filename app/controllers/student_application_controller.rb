@@ -1,9 +1,10 @@
 class StudentApplicationController < ApplicationController
-  def my_logger
-      @@my_logger ||= Logger.new("/tmp/my.log")
-  end
 
   def new
+  end
+
+  def index
+    @applications = StudentApplication.all
   end
 
   def create
@@ -19,10 +20,6 @@ class StudentApplicationController < ApplicationController
 
   def show
     @project = StudentApplication.find(params[:id])
-  end
-
-  def list
-
   end
 
   private
