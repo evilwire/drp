@@ -2,46 +2,63 @@
 <%= render '/layouts/logo' %>
 
 <section>
+    <div class="mentor hidden">
+        <% @mentors.each do |mentor| %>
+            <div>mentor: <%= mentor.users.first_name %> <%= mentor.users.last_name %></div>
+            <div>bio: <%= mentor.bio %></div>
+            <div class="create" data-mentor-id="<%= mentor.users.id %>" data-student-id="0">create project</div>
+        <% end %>
+    </div>
+
     <div class="section-wrapper">
         <% @applications.each do |application| %>
-            <div>
-                student: <%= application.users.first_name %> <%= application.users.last_name %>
-            </div>
-            <div>
-                email: <%= application.users.email %>
-            </div>
-            <div>
-                major: <%= application.major %>
-            </div>
-            <div>
-                year: <%= application.year %>
-            </div>
-            <div>
-                Past courses: <%= application.past_courses %>
-            </div>
-            <div>
-                current courses: <%= application.current_courses %>
-            </div>
-            <div>
-                interests: <%= application.interests %>
-            </div>
-            <div>
-                why: <%= application.why %>
-            </div>
-            <div>
-                favorite: <%= application.favorite %>
-            </div>
-            <div>
-                recommender: <%= application.recommender %>
-            </div>
-            <div>
-                other math dept: <%= application.alternate %>
-            </div>
-            <div>
-                how you found us: <%= application.how %>
-            </div>
-            <div>
-                questions: <%= application.questions %>
+            <div class="application">
+
+                <div>
+                    student: <%= application.users.first_name %> <%= application.users.last_name %>
+                </div>
+                <div>
+                    email: <%= application.users.email %>
+                </div>
+                <div>
+                    major: <%= application.major %>
+                </div>
+                <div>
+                    year: <%= application.year %>
+                </div>
+                <div>
+                    interests: <%= application.interests %>
+                </div>
+                <div>
+                    Past courses: <%= application.past_courses %>
+                </div>
+                <div>
+                    current courses: <%= application.current_courses %>
+                </div>
+                <div>
+                    <div class="view-app">view application</div>
+                    <div class="select-mentor" data-student-id="<%= application.users.id %>">select mentor</div>
+                </div>
+                <div class="why-app hidden">
+                    <div>
+                        why: <%= application.why %>
+                    </div>
+                    <div>
+                        favorite: <%= application.favorite %>
+                    </div>
+                    <div>
+                        recommender: <%= application.recommender %>
+                    </div>
+                    <div>
+                        other math dept: <%= application.alternate %>
+                    </div>
+                    <div>
+                        how you found us: <%= application.how %>
+                    </div>
+                    <div>
+                        questions: <%= application.questions %>
+                    </div>
+                </div>
             </div>
         <% end %>
     </div>
@@ -77,3 +94,4 @@
     </div>
 </nav>
 
+<%= javascript_include_tag "student_application.js" %>

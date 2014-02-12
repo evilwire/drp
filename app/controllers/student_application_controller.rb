@@ -5,6 +5,7 @@ class StudentApplicationController < ApplicationController
 
   def index
     @applications = StudentApplication.all
+    @mentors = MentorProfile.all
   end
 
   def create
