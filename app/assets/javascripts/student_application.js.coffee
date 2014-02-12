@@ -11,7 +11,7 @@ $(document).ready((b) ->
         mentor_id : mentor_id,
         student_id : student_id
       }
-    })
+    }, (evt) -> $(".mentor").toggleClass("hidden"))
   );
 
   $(".view-app").click((evt) ->
