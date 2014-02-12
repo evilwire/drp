@@ -7,7 +7,6 @@ class ProjectController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    @project.student_id = current_user.id
     if @project.save
       redirect_to project_url(@project)
     else
@@ -24,6 +23,8 @@ class ProjectController < ApplicationController
     def project_params
       params.require(:project).permit(:title,
                                       :summary,
-                                      :description)
+                                      :description,
+                                      :student_id,
+                                      :mentor_id)
     end
 end

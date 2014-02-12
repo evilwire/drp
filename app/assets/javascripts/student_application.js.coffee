@@ -6,7 +6,6 @@ $(document).ready((b) ->
   $(".create").click((evt) ->
     mentor_id = $(evt.target).data("mentor-id");
     student_id = $(evt.target).data("student-id");
-    console.log(student_id);
     $.post("/project/", {
       project : {
         mentor_id : mentor_id,

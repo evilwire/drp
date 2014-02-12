@@ -7,5 +7,6 @@ class Project < ActiveRecord::Base
    belongs_to :mentor, :class_name => 'Users'
    belongs_to :project_state
 
-   validates :title, :presence => true
+   validates :mentor, :presence => true
+   validates :student, :presence => true
 end
