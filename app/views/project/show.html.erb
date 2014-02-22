@@ -1,7 +1,24 @@
-<% provide(:title, 'Apply for DRP') %>
+<% provide(:title, 'Project Proposal') %>
 <%=render '/layouts/logo'%>
 
 <section>
+    <div class="section-wrapper">
+        <div class="hidden">
+            <%= @project.id %>
+        </div>
+        <div>
+            title: <%= @project.title %>
+        </div>
+        <div>
+            summary: <%= @project.summary %>
+        </div>
+        <div>
+            description: <%= @project.description %>
+        </div>
+        <div>
+            student: <%= @project.student.first_name %>
+        </div>
+    </div>
 
 </section>
 
@@ -33,4 +50,3 @@
         </div>
   </div>
 </nav>
-

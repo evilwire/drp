@@ -24,6 +24,8 @@ Drp::Application.routes.draw do
   match '/profile/delete', to: 'mentor_profile#destroy', via: 'delete'
 
   resources :sessions, only: [:new, :create, :destroy]
+  resources :project
+  resources :student_application
 
   match '/signin',  to: 'sessions#new',         via: 'get'
 

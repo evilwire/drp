@@ -2,6 +2,26 @@
 <%=render '/layouts/logo'%>
 
 <section>
+    <div class="section-wrapper">
+
+        <%= form_for :project, url: {action: "create"}  do |f| %>
+            <div class="form-element">
+                <%= f.label :title %>
+                <%= f.text_field :title %>
+            </div>
+            <div class="form-element">
+                <%= f.label :summary %>
+                <%= f.text_area :summary %>
+            </div>
+            <div class="form-element">
+                <%= f.label :description %>
+                <%= f.text_area :description %>
+            </div>
+            <div class="form-element">
+                <%= f.submit "submit" %>
+            </div>
+        <% end %>
+    </div>
 
 </section>
 
