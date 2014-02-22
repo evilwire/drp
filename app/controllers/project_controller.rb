@@ -2,13 +2,11 @@ class ProjectController < ApplicationController
   def my_logger
       @@my_logger ||= Logger.new("/tmp/my.log")
   end
-
   def new
   end
 
   def create
     @project = Project.new(project_params)
-    @project.student_id = current_user.id
     if @project.save
       redirect_to project_url(@project)
     else
@@ -21,22 +19,12 @@ class ProjectController < ApplicationController
     @project = Project.find(params[:id])
   end
 
-  def list
-
-  end
-
   private
     def project_params
-      params.require(:project).permit(:email,
-                                      :major,
-                                      :past_courses,
-                                      :current_courses,
-                                      :interests,
-                                      :why,
-                                      :favorite,
-                                      :recommender,
-                                      :alternate,
-                                      :how,
-                                      :questions)
+      params.require(:project).permit(:title,
+                                      :summary,
+                                      :description,
+                                      :student_id,
+                                      :mentor_id)
     end
 end
