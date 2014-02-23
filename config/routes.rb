@@ -31,5 +31,7 @@ Drp::Application.routes.draw do
 
   match '/signout', to: 'sessions#destroy',     via: 'delete'
 
+  match '/signup',  to: 'student_application#new', via: 'get'
+
   root 'project#home'
 end

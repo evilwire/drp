@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  helper :all
 
   def new
   end
@@ -9,7 +10,7 @@ class SessionsController < ApplicationController
     if @user && (@user.authenticate params[:session][:password] )
         sign_in @user
         #flash[:success] = "Flashing some stuff"
-        redirect_to root_url
+        return_from_signin
     else
       flash[:error] = "Unable to authenticate"
       render "new"

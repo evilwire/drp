@@ -60,6 +60,18 @@ ActiveRecord::Schema.define(version: 20140201152957) do
     t.text     "summary"
     t.text     "description"
     t.integer  "project_state_id"
+    t.string   "email"
+    t.string   "major"
+    t.string   "year"
+    t.text     "past_courses"
+    t.text     "current_courses"
+    t.text     "interests"
+    t.text     "why"
+    t.text     "favorite"
+    t.string   "recommender"
+    t.string   "alternate"
+    t.string   "how"
+    t.text     "questions"
   end
 
   create_table "references", force: true do |t|
@@ -86,11 +98,6 @@ ActiveRecord::Schema.define(version: 20140201152957) do
     t.string   "how"
     t.text     "questions"
     t.integer  "users_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "test_models", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end

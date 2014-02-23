@@ -1,6 +1,10 @@
 class StudentApplicationController < ApplicationController
+  helper :all
 
   def new
+    unless signed_in?
+      redirect_to_signin from: '/signup'
+    end
   end
 
   def index
@@ -26,6 +30,7 @@ class StudentApplicationController < ApplicationController
   private
     def project_params
       params.require(:project).permit(:major,
+                                      :year,
                                       :past_courses,
                                       :current_courses,
                                       :interests,
