@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     @name  = "#{@user.first_name} #{@user.last_name}" 
     @email = @user.email
     roles = ["admin"]
-    if @user.mentor_profile
+    if @user.is_mentor?
         roles << "mentor"
     end
     @roles_string = roles.join ", "

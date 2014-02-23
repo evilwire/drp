@@ -5,6 +5,10 @@ module ApplicationHelper
   end
 
   def return_from_signin
-    redirect_to session.delete(:return_to)
+    if session[:return_to]
+      redirect_to session.delete(:return_to)
+    else
+      redirect_to root_path
+    end
   end
 end

@@ -1,5 +1,6 @@
 Drp::Application.routes.draw do
 
+  get "mentee/index"
   get "users/view"
   get "mentor_profile/index"
   get "mentor_profile/new"
@@ -32,6 +33,10 @@ Drp::Application.routes.draw do
   match '/signout', to: 'sessions#destroy',     via: 'delete'
 
   match '/signup',  to: 'student_application#new', via: 'get'
+
+  match '/mentees', to: 'mentee#index',         via: 'get'
+
+  match '/mentors', to: 'mentor_profile#index', via: 'get'
 
   root 'project#home'
 end

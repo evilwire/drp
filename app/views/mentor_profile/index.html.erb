@@ -1,9 +1,16 @@
+<% provide :title, "List of mentors" %>
 
+<section>
+    <div class = "section-wrapper">     
+      <ul>
+        <% @users.each do |user| %>
+          <li> 
+            <%= user.email %> 
+            <% profile = MentorProfile.find_by users_id: user.id %>
+            <%= profile ? profile.bio : "" %>
+          </li>
+        <%end%>
+      </ul>
+    </div>
 
-<% @users.each do |user| %>
-<p> <%= user.email %> 
-<% profile = MentorProfile.find_by users_id: user.id %>
-<%= profile ? profile.bio : "" %></p>
-<%end%>
-
-
+</section>

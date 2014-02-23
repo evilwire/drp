@@ -4,7 +4,7 @@ class MentorProfileController < ApplicationController
   end
     
   def index
-    @users = Users.all
+    @users = Users.select { |user| user.is_mentor? }
   end
 
   def new

@@ -15,6 +15,10 @@ class Users < ActiveRecord::Base
         SecureRandom.urlsafe_base64
     end
 
+    def is_mentor?
+        self.mentor_profile != nil
+    end
+
     private
 
         def create_remember_token
