@@ -22,6 +22,10 @@ class Users < ActiveRecord::Base
         self.mentor_profile != nil
     end
 
+    def is_current_student?
+        not self.projects_as_student.empty?
+    end
+
     private
 
         def create_remember_token
