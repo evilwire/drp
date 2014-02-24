@@ -1,7 +1,7 @@
 module ApplicationHelper
   def redirect_to_signin(return_to = {from: root_url})
     session[:return_to] = return_to[:from]
-    redirect_to '/signin'
+    redirect_to signin_path
   end
 
   def return_from_signin

@@ -9,7 +9,7 @@ class MentorProfileController < ApplicationController
 
   def new
     unless signed_in?
-      redirect_to "/sessions/new"
+      redirect_to_signin from: mentor_profile_new_path
     else
       @user = self.current_user
       @profile = @user.mentor_profile
@@ -52,7 +52,7 @@ class MentorProfileController < ApplicationController
     end
     #render :new
     session[:interest] = kept_interests
-    redirect_to '/mentor_profile/new'
+    redirect_to mentor_profile_new_path
   end
 
   def profile_params
@@ -61,7 +61,7 @@ class MentorProfileController < ApplicationController
 
   def update
     unless signed_in?
-     redirect_to "/sessions/new"
+     redirect_to signin_path
     end
   end
 
@@ -70,7 +70,7 @@ class MentorProfileController < ApplicationController
 
   def delete
     unless signed_in?
-      redirect_to "/sessions/new"
+      redirect_to signin_path
     end
   end
 end

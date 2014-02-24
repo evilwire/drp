@@ -15,6 +15,8 @@ Users.delete_all
 			             last_name: 'Fu' unless Users.find_by email:'knight.w.fu@gmail.com'
 @knightfu.save		            
 
+@knightfu.mentor_profile = MentorProfile.create(bio: "I am a mentor")
+
 @fiorda   = Users.create email:'fiorda.f@gmail.com',
                          password:'11223344556677',
                          password_confirmation:'11223344556677',
@@ -22,3 +24,20 @@ Users.delete_all
                          last_name: 'Fiordalisi' \
                             unless Users.find_by email:'fiorda.f@gmail.com'
 @fiorda.save
+
+@fiorda.mentor_profile = MentorProfile.create(bio: "I am a mentor")
+
+@student1  = Users.create email:'errorletre@rutgers.edu',
+                         password:'1'*14,
+                         password_confirmation:'1'*14,
+                         first_name: 'Error',
+                         last_name: 'LeTre'
+@student1.save
+
+@student2   = Users.create email:'good@student.com',
+                         password: '1'*14,
+                         password_confirmation: '1'*14,
+                         first_name: 'Good',
+                         last_name: 'Student'
+@student2.save
+
