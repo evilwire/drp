@@ -1,3 +1,28 @@
 // Place all the styles related to the mentee controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.users-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.user-box{
+    position: relative;
+}
+
+.user-box .gravatar{
+    display: inline-block;
+}
+
+.user-box .info{
+    display: inline-block;
+    position: absolute;
+    margin-left: 20px;
+
+    h3{
+        margin: 0;
+    }
+
+}

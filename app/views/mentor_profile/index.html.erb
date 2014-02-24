@@ -2,15 +2,27 @@
 
 <section>
     <div class = "section-wrapper">     
-      <ul>
-        <% @users.each do |user| %>
-          <li> 
-            <%= user.email %> 
+        <ul class='users-list'>
+            <% @users.each do |user| %>
+                <li>
+                    <div class="user-box">
+                        <div class="gravatar">
+                            <%= gravatar_for user, size: '100' %>
+                        </div>
+                        <div class="info">
+                            <h3>
+                                <%= "#{user.first_name} #{user.last_name}"%>
+                            </h3>
+                            <div class="email">
+                                <%= user.email %>
+                            </div>
             <% profile = MentorProfile.find_by users_id: user.id %>
             <%= profile ? profile.bio : "" %>
-          </li>
-        <%end%>
-      </ul>
+                        </div>
+                    </div>
+                </li>
+            <% end %>
+        </ul>
     </div>
 
 </section>

@@ -45,3 +45,8 @@ Users.delete_all
                           student: @student2,
                           title: "Motivic K-Theory",
                           summary: "blabla")
+
+@project2 = Project.create(mentor: @fiorda,
+                           student: @student1,
+                           title: "Bad Soccer",
+                           summary: "We do not sow")
