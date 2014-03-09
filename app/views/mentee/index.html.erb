@@ -1,23 +1,25 @@
+<% provide :title, "List of mentees" %>
+
 <section>
-    <div class="section-wrapper">
-        <ul class='users-list'>
-            <% @mentees.each do |mentee| %>
-                <li>
-                    <div class="user-box">
-                        <div class="gravatar">
-                            <%= gravatar_for mentee, size: '100' %>
-                        </div>
-                        <div class="info">
-                            <h3>
-                                <%= "#{mentee.first_name} #{mentee.last_name}"%>
-                            </h3>
-                            <div class="email">
-                                <%= mentee.email %>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            <% end %>
-        </ul>
-    </div>
+  <div class="section-wrapper">
+    <ul class='users-list'>
+      <% @mentees.each do |mentee| %>
+        <li>
+          <div class="user-box">
+            <div class="gravatar">
+              <%= gravatar_for mentee, size: '100' %>
+            </div>
+            <div class="info">
+              <h3>
+                <%= "#{mentee.first_name} #{mentee.last_name}"%>
+              </h3>
+              <div class="email">
+                <%= mentee.email %>
+              </div>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </section>
