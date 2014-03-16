@@ -15,4 +15,6 @@
 //= require turbolinks
 //= require underscore
 //= require backbone
+//= require response.min
+//= require logo-resize
 //= require_tree ./sitewide
