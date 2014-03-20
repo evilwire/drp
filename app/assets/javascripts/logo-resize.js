@@ -24,8 +24,11 @@
   /*
   With turbolinks, jQuery "ready" event doesn't fire on cliks
   need additional event
-  */
+  
   $(document).on('page:load', pagesize);
+
+  added jQuery.turbolinks gem to get rid of this workaround.
+  */
 
 })(jQuery, Response);
 
