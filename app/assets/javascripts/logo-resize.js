@@ -1,7 +1,5 @@
 (function($, R){
   
-  console.log("fired");
-
   pagesize = function(){
     var logo = $(".logo-image");
     var wrapper = $(".page-wrapper");
