@@ -150,6 +150,7 @@ h2 {
         border-radius: 100px;
     }
     .sign-up-label{
+        white-space: nowrap;
         font-size: 24px;
         font-weight: 400;
     }
@@ -232,7 +233,16 @@ footer .container
   }
 }
 
-@media all and (min-height: 400px){
+@media all and(min-height: 400px), all and (max-width: 640px){
+  .logo-image{
+      background-image: image-url('logo.png');
+      background-size: contain;
+      width: 100px;
+      height: 91px;
+  }
+}
+
+@media all and (min-height: 400px) and (min-width: 641px){
 
   section:first-of-type{
     height: 30%;
@@ -251,16 +261,9 @@ footer .container
       font-size: 20px;
       display: block;
   }
-
-  .logo-image{
-      background-image: image-url('logo.png');
-      background-size: contain;
-      width: 100px;
-      height: 91px;
-  }
 }
 
-@media all and (min-height: 680px){
+@media all and (min-height: 680px) and (min-width: 641px){
 
   section:first-of-type{
     height: initial;
@@ -298,10 +301,48 @@ footer .container
   }
 }
 
-@media all and (max-device-width: 641px){
+/*
+* device-width for most cellphones is 320px,
+* so one should include the max-device-width property
+* for that screen size.
+*/
+@media all and (max-width: 640px){
+  h2{
+    display: block;
+    text-align: center;
+  }
+
+  .middle-section{
+    min-width: initial; 
+    width: 100%;
+    .row{
+      display: block;
+
+      .middle-text{
+        display: block;
+        width: 100%;
+        p{
+          display: none;
+        }
+      }
+
+      .sign-up{
+        display: block;
+        width: initial;
+        padding: 0;
+      }
+
+    }
+  }
+
+  .nav-container{
+    min-width: initial;
+    width: 100%;
+  }
 
 }
 
-@media all and (max-device-width: 481px){
+@media all and (max-width: 480px){
 
 }
+
