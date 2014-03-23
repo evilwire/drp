@@ -341,9 +341,54 @@ footer .container
     width: 100%;
   }
 
+  .nav-container{
+    
+    .nav-item{
+      .label{
+        white-space: nowrap;
+      }
+      .button {
+      margin: 3px auto 10px;
+      background-image: image-url('icons.png');
+      background-size: 415px;
+      background-repeat: no-repeat;
+      width: 60px;
+      height: 60px;
+      border: solid 5px #9c2;
+      border-radius: 50%;
+      }
+      .past{
+        background-position: -96px -14px; 
+      }
+      .mentor {
+          background-position: -177px -13px;
+      }
+      .participants {
+          background-position: -262px -12px;
+      }
+      .info {
+          background-position: -343px -11px;
+      }
+    }
+  }
 }
 
 @media all and (max-width: 480px){
 
+  .sign-up{
+    .deadline, .green{
+      display: none;
+    }
+  }
+
+  .nav-container{
+    bottom: 0px;
+    margin-bottom: 0px;
+    .nav-item{
+      .label{
+        display: none;
+      }
+    }
+  }
 }
 
