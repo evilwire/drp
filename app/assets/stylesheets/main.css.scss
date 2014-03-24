@@ -234,7 +234,9 @@ footer .container
   }
 }
 
-@media all and(min-height: 400px), all and (max-width: 640px){
+@media all and(min-height: 400px),
+       all and (max-width: 640px),
+       all and (max-device-width: 640px){
   .logo-image{
       background-image: image-url('logo.png');
       background-size: contain;
@@ -243,7 +245,7 @@ footer .container
   }
 }
 
-@media all and (min-height: 400px) and (min-width: 641px){
+@media all and (min-height: 400px) and (min-width: 641px) and (min-device-width: 614px){
 
   section:first-of-type{
     height: 30%;
@@ -264,7 +266,9 @@ footer .container
   }
 }
 
-@media all and (min-height: 680px) and (min-width: 641px){
+@media all and (min-height: 680px)
+           and (min-width: 641px)
+           and (min-device-width: 641px){
 
   section:first-of-type{
     height: initial;
@@ -307,7 +311,7 @@ footer .container
 * so one should include the max-device-width property
 * for that screen size.
 */
-@media all and (max-width: 640px){
+@media all and (max-width: 640px), all and (max-device-width: 640px){
   h2{
     display: block;
     text-align: center;
@@ -373,7 +377,7 @@ footer .container
   }
 }
 
-@media all and (max-width: 480px){
+@media all and (max-width: 480px), all and (max-device-width: 480px){
 
   .sign-up{
     .deadline, .green{
