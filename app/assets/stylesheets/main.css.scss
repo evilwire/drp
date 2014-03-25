@@ -10,6 +10,7 @@ body
   background-color: #efefeb;
   color: #343;
   width: 100%;
+  min-width: 300px;
 }
 
 a {
@@ -336,7 +337,6 @@ footer .container
         width: initial;
         padding: 0;
       }
-
     }
   }
 
@@ -386,7 +386,7 @@ footer .container
   }
 
   .nav-container{
-    bottom: 0px;
+    bottom: 2px;
     margin-bottom: 0px;
     .nav-item{
       .label{
