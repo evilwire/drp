@@ -228,7 +228,9 @@ footer .container
   background-color: #efefef;
   width: 100%;
   padding: 15px 20px;
-  
+  box-sizing:border-box;
+  -moz-box-sizing:border-box; /* Firefox */ 
+
   .contact {
      font-size: 14px;
      font-weight: 400;
